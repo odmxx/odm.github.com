@@ -12,7 +12,7 @@ layout: default
 		
 		{% if page.tags != empty %}
 		<ul class="tags emphnext">
-			<li>标签：</li>
+			<li>Tag：</li>
 			{% for tag in page.tags %}
 				<li><a href="{{ site.baseurl }}/tags#{{tag | replace:' ', '-' | downcase }}">{{ tag }}</a>{% if forloop.last == false %}, {%endif %}</li>
 			{% endfor %}
@@ -26,7 +26,7 @@ layout: default
 		<div id="post-bottom">
 			<!-- JiaThis Button BEGIN -->
 			<div id="ckepop">
-				<span class="jiathis_txt">分享到：</span>
+				<span class="jiathis_txt">share：</span>
 				<a class="jiathis_button_qzone"></a>
 				<a class="jiathis_button_tsina"></a>
 				<a class="jiathis_button_tqq"></a>
@@ -36,7 +36,7 @@ layout: default
 				<a class="jiathis_counter_style"></a>
 				
 				<span class="more right">
-				<a href="{{site.baseurl}}/">返回主页</a>
+				<a href="{{site.baseurl}}/">back to home</a>
 				</span>
 			</div>
 			<!-- JiaThis Button END -->	
@@ -49,15 +49,15 @@ layout: default
 		<ul>
 			{% if page.previous.url %}
 			<li class="left">
-				<a href="{{ site.baseurl }}{{page.previous.url}}" title="前一篇：{{page.previous.title}}">&laquo; {{page.previous.title}}</a>
+				<a href="{{ site.baseurl }}{{page.previous.url}}" title="pre：{{page.previous.title}}">&laquo; {{page.previous.title}}</a>
 			</li>
 			{% endif %}
 			
-			<li class="center"><a href="{{ site.baseurl }}/archives/">文章列表</a></li>
+			<li class="center"><a href="{{ site.baseurl }}/archives/">list</a></li>
 			
 			{% if page.next.url %}
 			<li class="right">
-				<a href="{{ site.baseurl }}{{page.next.url}}" title="后一篇：{{page.next.title}}">{{page.next.title}} &raquo;</a>
+				<a href="{{ site.baseurl }}{{page.next.url}}" title="next：{{page.next.title}}">{{page.next.title}} &raquo;</a>
 			</li>
 			{% endif %}
 		</ul>
