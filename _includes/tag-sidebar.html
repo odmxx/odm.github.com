@@ -1,0 +1,10 @@
+<section>
+    <h3>分类标签</h3>
+	<div id="tag_sidebar">
+
+	{% for tag in site.tags %}
+		
+	<a href="{{ site.baseurl }}/tags#{{ tag[0] }}" title="{{ tag[0] }}">{{ tag[0] }}({{ tag[1].size }})&nbsp;</a>
+	{% endfor %}
+	</div>
+</section>

@@ -1,6 +1,35 @@
-markdown: rdiscount
-permalink: /:year/:month/:day/:title/
-author: ddatsh
+meta:
+    site_title: "雁起平沙的文艺博客"
+    site_subtitle: "人生就是不停的战斗"
+    site_language: "zh-cn"
+    absolute_baseurl: http://art.yanping.me
+    domain: yanping.me
+    author:
+        full_name:Chen Yanping
+        short_name: ypchen
+        name: ypchen
+        email: chen@yanping.me
+
+url: http://art.yanping.me
+
+#baseurl: /base
+
+markdown: kramdown
+
+# markdown: maruku
+# maruku:
+#   use_divs: true
+#    use_tex: true
+#    png_engine : blahtex
+#    png_dir    : images/latex/
+#    png_url    : /images/latex/
+
 pygments: false
-url: /blog
-paginate: 10
+permalink: /blog/:year/:month/:day/:title
+
+disqus_short_name: ypchenstory
+
+lsi: false
+
+
+

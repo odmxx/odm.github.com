@@ -1,34 +1,82 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-cn">
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta http-equiv="cache-control" content="max-age=7200" />
-	<meta name="author" content="{{ site.author }}" />
-	<title>{{ page.title }}</title>
-	<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
-	<link href="{{ site.url }}/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
-	<!--[if lte IE 7]><style>* {display:none}</style><![endif]-->
-	<link rel="stylesheet" href="{{ site.url }}/media/css/style.css">
-	<script src="{{ site.url }}/media/js/all.js"></script>
-</head>
+<html lang="en-us">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.meta.site_title }}</title>
+        <meta name="author" content="{{ site.meta.author.fullname }}" />
 
-<body onload="prettyPrint()">
-	<div id="container" >
-	      <div id="main">
-			<header><h1>极简设计</h1></header>
-			<div class="nav">
-				<a title="home page" class="" href="{{ site.url }}/">Index</a>
-				<a title="about" class="" href="{{ site.url }}/about/">About</a>
-				<a title="categories" class="" href="{{ site.url }}/categories/">Tags</a>
-				<a title="categories" class="" href="{{ site.url }}/archives/">Archives</a>
-				<a title="subscribe by RSS" class="" href="{{ site.url }}/feed/">Feed</a>
-			</div>
-			<div class="content">
-			 	<div class="post">
-					{{ content }}
-				</div>
-			</div>
+
+            <link href="atom.xml" rel="alternate" 
+                title="Atom" type="application/atom+xml" />
+            <link href="rss.xml" rel="alternate" 
+                title="RSS" type="application/rss+xml" />
+
+		<link rel="shortcut icon" type=image/x-icon href="{{site.baseurl}}/favicon.ico">
+        
+		
+		<!--[if lt IE 9]>
+			<script src="{{site.baseurl}}/js/html5.js" type="text/javascript"></script>	 
+        <![endif]--> 
+        
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css" 
+            type="text/css" media="screen, projection" />
+			
+		<script src="{{site.baseurl}}/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script> 
+		<script type=text/javascript src="{{site.baseurl}}/js/scrolltop.js"></script>
+
+		
+		{% unless page.title %}
+			{% include browser.html %}
+			{% include redirect-url.html %}
+		{% endunless %}			
+        
+    </head>
+	
+	{% unless page.title %}
+	<body onload="detectBrowser()">
+	{% else %}	
+    <body>
+	{% endunless %}
+	
+		<div style="display: none" id="goTopBtn">
+			<img border=0 class="topBtn" title="返回顶部" src="{{site.baseurl}}/images/go2top.jpg">
 		</div>
-	</div>
-</body>
+		<script type=text/javascript>goTopEx();</script>
+
+        <section class="site">
+
+            <header>
+                <h1><a href="{{site.baseurl}}/">{{ site.meta.site_title }}</a></h1>
+                <h2>{{ site.meta.site_subtitle }}</h2>         	
+		
+            </header>
+			
+			<aside class="sidebar">
+				{% unless page.title %}
+					{% include about-me.html %} 
+				{% endunless %}
+				
+				{% if page.title %}
+					{% include recent.html %}
+				{% endif %}
+				
+				{% include tag-sidebar.html %}
+				{% include douban.html %}
+				{% include see-also.html %} 				
+				{% include bottom.html %}  
+                         
+            </aside>  
+			
+			{{ content }}			
+             
+  
+
+			{% include footer.html %} 
+
+
+        </section>
+
+		{% include after-foot.html %}
+	
+    </body>
 </html>

@@ -1,0 +1,17 @@
+<script type="text/javascript">
+    
+        $(document).ready(function(){             
+
+            $('.posts a').each(function(index,element){
+                var href = $(this).attr('href');
+                if(href.indexOf('#') == 0){
+                }else if ( href.indexOf('/') == 0 || href.toLowerCase().indexOf('art.yanping.me')>-1 ){
+                }else{
+                    $(this).attr('target','_blank');
+                    $(this).addClass('external');
+                }
+            });
+           
+        });	
+
+</script>
