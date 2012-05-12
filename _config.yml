@@ -1,0 +1,6 @@
+markdown: rdiscount
+permalink: /:year/:month/:day/:title/
+author: ddatsh
+pygments: false
+url: /blog
+paginate: 10

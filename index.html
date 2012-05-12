@@ -1,0 +1,45 @@
+---
+layout: default
+title: 极简设计
+---
+  {% if paginator.previous_page %}
+  	{% if paginator.page == 2 %}
+  		<span style="font-size:0.8em"><a href="{{ site.url }}/" rel="bookmark">☜ Previous Page</a></span>
+  	{% else %}
+  		<span style="font-size:0.8em"><a href="{{ site.url }}/page{{ paginator.previous_page }}/" rel="bookmark">☜ Previous Page</a></span>
+  	{% endif %}
+  {% endif %}
+  &nbsp;
+  {% if paginator.next_page %}
+  	<span style="font-size:0.8em"><a href="{{ site.url }}/page{{ paginator.next_page }}/" rel="bookmark" style="float:right">Next Page ☞</a></span>
+  {% endif %}
+	<div style="clear:both"></div>
+	
+	{% for post in paginator.posts %}
+	<div class="posts">
+		<h4 style="margin:0px 0px 10px -20px "><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }} </a><span style="float:right;font-size:0.8em;">  {{ post.date | date:"%Y-%m-%d" }}</span></h4>
+		
+		<div class="entry">
+			{% if post.description %}
+					{{ post.description }}
+					  <p class="more"><a href="{{ site.url }}{{ post.url }}" title="Read More" rel="nofollow"><span>&#10149;</span>Read More</a></p>
+			{% else %}
+					{{ post.content }}
+			{%endif%}
+			<hr/>
+		</div>
+		
+	  </div>
+	  {% endfor %}
+
+  {% if paginator.previous_page %}
+  	{% if paginator.page == 2 %}
+  		<span style="font-size:0.8em"><a href="{{ site.url }}/" rel="bookmark">☜ Previous Page</a></span>
+  	{% else %}
+  		<span style="font-size:0.8em"><a href="{{ site.url }}/page{{ paginator.previous_page }}/" rel="bookmark">☜ Previous Page</a></span>
+  	{% endif %}
+  {% endif %}
+  {% if paginator.next_page %}
+  <span style="font-size:0.8em"><a href="{{ site.url }}/page{{ paginator.next_page }}/" rel="bookmark" style="float:right">Next Page ☞</a></span>
+  {% endif %}
+<div style="clear:both"></div>
