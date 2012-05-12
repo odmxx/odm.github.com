@@ -1,5 +1,6 @@
 这是本人学习SURuby的博客，地址是 http://www.suruby.com
-主要研究Ruby与SketchUp的应用，也欢迎大家投稿，邮箱是 odm@sketchupbar.com
+主要用学习研究Ruby与SketchUpRubyAPI
+也欢迎大家投稿，邮箱是 odm@sketchupbar.com
 
 要感谢一个人
 

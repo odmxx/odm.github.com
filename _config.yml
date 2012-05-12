@@ -1,16 +1,16 @@
 meta:
-    site_title: "雁起平沙的文艺博客"
-    site_subtitle: "人生就是不停的战斗"
-    site_language: "zh-cn"
-    absolute_baseurl: http://art.yanping.me
-    domain: yanping.me
+    site_title: "ODM's Blog"
+    site_subtitle: "Study"
+    site_language: "en"
+    absolute_baseurl: http://www.suruby.com
+    domain: www.suruby.com
     author:
-        full_name:Chen Yanping
-        short_name: ypchen
-        name: ypchen
-        email: chen@yanping.me
+        full_name:Liuxiaobo
+        short_name: ODM
+        name: ODM
+        email: odm@sketchupbar.com
 
-url: http://art.yanping.me
+url: http://www.suruby.com
 
 #baseurl: /base
 
